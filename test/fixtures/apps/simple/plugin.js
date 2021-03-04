@@ -9,5 +9,5 @@
 const path = require('path');
 
 exports.sequelize = {
-  package: path.join('..', '..', '..', '..')
+  package: path.join('..', '..', '..', '..'),
 };

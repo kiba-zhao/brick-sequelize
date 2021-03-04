@@ -7,21 +7,20 @@
 'use strict';
 
 const sequelize = require('sequelize');
-const { isString } = require('lodash');
 const { inject, ENGINE } = require('brick-engine');
 const { SEQUELIZE, MODEL } = require('./lib/constants');
 
-module.exports = (engine) => {
+module.exports = engine => {
   engine.install(factory);
 };
 
 function factory(engine) {
 
   const { patterns, opts, clients: clientConfig } = engine.config.sequelize || {};
-  let model = {};
+  const model = {};
   if (patterns) {
     const targets = engine.load(patterns, opts);
-    for (let target of targets) {
+    for (const target of targets) {
       const name = target.module[MODEL];
       if (name) {
         model[name] = target.module;
@@ -41,4 +40,4 @@ function factory(engine) {
 
 }
 
-inject(factory, { name: SEQUELIZE, deps: [ENGINE] });
+inject(factory, { name: SEQUELIZE, deps: [ ENGINE ] });

@@ -10,7 +10,7 @@ const { getEnv, dsnGen } = require('../lib/utils');
 
 const SEMICOLON = ';';
 
-module.exports = (env) => {
+module.exports = env => {
 
   const exports = {};
 
@@ -29,8 +29,8 @@ module.exports = (env) => {
           pool: {
             max: isNaN(pool_max) ? 5 : pool_max,
           },
-        }
-      }
+        },
+      },
     };
 
   } else {
@@ -40,17 +40,11 @@ module.exports = (env) => {
           ...dsnGen(env.DB_DSN),
           pool: {
             max: isNaN(pool_max) ? 5 : pool_max,
-          }
-        }
-      }
+          },
+        },
+      },
     };
   }
 
   return exports;
-};
-
-exports[SEQUELIZE] = {
-  clients: {
-    default: {}
-  }
 };
