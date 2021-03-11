@@ -35,7 +35,7 @@ export type ModelOpts = {
  * sequelize声明函数
  * @param {Any} target 目标对象
  * @param {SequelizeOpts} opts 可选项
- * @returns {Any} 目标对象
+ * @return {Any} 目标对象
  */
 export function sequelize(target: any, opts: SequelizeOpts): any;
 /**
@@ -47,7 +47,7 @@ export function sequelize(target: any, opts: SequelizeOpts): any;
  * model结构声明函数
  * @param {Any} target 目标对象
  * @param {ModelOpts} opts 可选项
- * @returns {Any} 目标对象
+ * @return {Any} 目标对象
  */
 export function model(target: any, opts: ModelOpts): any;
 export function getEnv(env: any, defaultVal: any): any;
